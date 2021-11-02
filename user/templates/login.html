@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div class="custom-input">
+        <form action="" method="post" name="register">
+            {% csrf_token %}
+            <div>
+                {{register.first_name}}
+                {% if register.first_name.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{register.first_name.errors}}</strong>
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{register.email}}
+                {% if register.email.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{register.email.errors}}</strong>
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{register.phone_number}}
+                {% if register.phone_number.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{register.phone_number.errors}}</strong>
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{register.password}}
+                {% if register.password.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{register.password.errors}}</strong>
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{register.confirm_password}}
+                {% if register.confirm_password.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{register.confirm_password.errors}}</strong>
+                </div>
+                {% endif %}
+            </div>
+            <label class="first-child" style="width: 100%;">
+                <span style="margin-left: 2%;">
+                    Sign up for our newsletter!
+                </span>
+            </label>
+            <div class="submit-text coupon" style="margin-top: 0">
+                <button type="submit" name="register"> Register </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
